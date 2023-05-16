@@ -47,7 +47,7 @@ class MainApp(MDApp):
             cursorclass=pymysql.cursors.DictCursor)
         return con
 
-    def build(self):        # менеджер экрана 
+    def build(self):        # менеджер экрана
         mw = MainWidget()
         if self.is_logged == True:
             mw.ids.manager.get_screen("schedule").update()
