@@ -1,0 +1,25 @@
+<StudentCard>:
+    size_hint_y: None
+    height: app.settings["screen"]["schedule"]["card_height"]
+    md_bg_color: rgba(app.settings["color"]["lemon"])
+    orientation: "vertical"
+    on_release:
+        self.on_touch(self)
+    BoxLayout:
+        MDLabel:
+            id: id
+            #
+            #size_hint_x: .2
+            #
+            halign: "center"
+        MDLabel:
+            id: time
+            halign: "center"
+        MDLabel:
+            id: student_name
+            halign: "center"
+
+    MDLabel:
+        id: address
+        md_bg_color: rgba(app.settings["color"]["honeydew"])
+        halign: "center"

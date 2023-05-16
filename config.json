@@ -1,0 +1,28 @@
+{
+    "app":
+    {
+        "width": 500,
+        "height": 700,
+        "db":
+        {
+            "hostname": "localhost",
+            "username": "root",
+            "password": "",
+            "database": "tutor-app"
+        }
+    },
+    "color":
+    {
+        "honeydew": "#ACE7B3",
+        "black": "#3E3737",
+        "lemon": "#fdffb6"
+    },
+    "screen":
+    {
+        "padding": 15,
+        "schedule":
+        {
+           "card_height": 100 
+        }
+    }
+}

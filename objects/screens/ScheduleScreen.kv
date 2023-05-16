@@ -1,0 +1,72 @@
+<ScheduleScreen>:
+    name: "schedule"
+    title: "Расписание"
+
+    BoxLayout:
+        orientation: "vertical"
+        size_hint: 1, None
+        size: root.width, root.height
+        padding: app.settings["screen"]["padding"] / 2, app.settings["screen"]["padding"]
+        spacing: 15
+
+        BoxLayout:
+            size_hint_y: None
+            height: 40
+            MDIconButton:
+                size_hint_y: None
+                icon: "arrow-left"
+
+                on_release:
+                    root.update_month(-1)
+
+            MDLabel:
+                id: header_month
+                font_size: 22
+                halign: "center"
+                valign: "center"
+
+            MDIconButton:
+                size_hint_y: None
+                height: 40
+                icon: "arrow-right"
+
+                on_release:
+                    root.update_month(1)
+
+        BoxLayout:
+            size_hint_y: None
+            height: 40
+            MDIconButton:
+                size_hint_y: None
+                icon: "arrow-left"
+
+                on_release:
+                    root.update_day(-1)
+
+            MDLabel:
+                id: header_day
+                font_size: 22
+                halign: "center"
+                valign: "center"
+
+            MDIconButton:
+                size_hint_y: None
+                height: 40
+                icon: "arrow-right"
+
+                on_release:
+                    root.update_day(1)
+
+        ScrollView:
+            MDGridLayout:
+                id: students_list
+                cols: 1
+                adaptive_height: True
+                spacing: 20
+
+        MDFillRoundFlatButton:
+            size_hint_x: 1
+            text: "Добавить занятие"
+
+            on_release:
+                root.add_lesson()

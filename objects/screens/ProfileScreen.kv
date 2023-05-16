@@ -1,0 +1,42 @@
+<ProfileScreen>:
+    name: "profile"
+    title: "Профиль"
+
+    BoxLayout:
+        orientation: "vertical"
+        size_hint: 1, None
+        size: root.width, root.height
+        padding: app.settings["screen"]["padding"] / 2, app.settings["screen"]["padding"]
+
+        MDLabel:
+            id: notificator
+            color: [1, 0, 0, 1]
+            size_hint_y: None
+            height: 40
+
+        MDTextField:
+            id: login
+            size_hint_y: None
+            height: 40
+            hint_text: "Логин"
+            text: str(app.store.get("data")["login"])
+            readonly: True
+
+        MDTextField:
+            id: password
+            size_hint_y: None
+            height: 40
+            password: True
+            hint_text: "Новый пароль"
+
+
+        MDFillRoundFlatButton:
+            size_hint_x: 1
+            size_hint_y: None
+            height: 40
+            text: "Сохранить изменения"
+
+            on_release:
+                root.save()
+
+        Widget:
